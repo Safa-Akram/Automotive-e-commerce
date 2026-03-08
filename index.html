@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoParts Pro | Premium Automotive Parts</title>
+    <meta name="description"
+        content="Shop high-performance auto parts, fluids, and accessories for your vehicle. Elevate your ride with AutoParts Pro.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="text-accent">Auto</span>Parts<span class="logo-pro">Pro</span>
+            </a>
+            <div class="nav-links">
+                <a href="#parts">Parts</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-btn" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items will be injected here via JS -->
+            <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay loop muted playsinline
+            poster="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&q=80&w=2000">
+            <!-- Using a reliable local stock video of driving -->
+            <source src="/images/supercar-racing.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your <span class="text-accent">Ride</span></h1>
+            <p class="hero-subtitle">Discover high-performance components and accessories engineered for precision,
+                power, and durability.</p>
+            <a href="#parts" class="cta-primary">Shop Now</a>
+        </div>
+        <div class="hero-gradient"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="parts" class="product-section">
+            <div class="section-header">
+                <h2 class="section-title">Featured Parts</h2>
+                <div class="category-filters" id="category-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <!-- Filters injected via JS -->
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be injected here via JS -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <h2 class="section-title">About <span class="text-accent">AutoParts Pro</span></h2>
+                <p>We are dedicated to providing the highest quality aftermarket automotive parts to enthusiasts and
+                    professionals alike. With decades of combined industry experience, our team curates a selection of
+                    performance, standard, and aesthetic upgrades that meet the highest standards of reliability and
+                    design.</p>
+                <p>Whether you're hitting the track or just performing routine maintenance, AutoParts Pro has what you
+                    need to elevate your ride.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&q=80&w=1200"
+                    alt="High Performance Car"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-container">
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="How can we help?"></textarea>
+                        </div>
+                        <button type="submit" class="cta-primary" style="width: 100%;">Submit Inquiry</button>
+                    </form>
+                    <div id="contact-success" class="contact-success" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>Message Sent!</h3>
+                        <p>Thank you for reaching out. Our team will get back to you shortly.</p>
+                        <button id="contact-reset-btn" class="cta-secondary">Send Another Message</button>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h4>Location</h4>
+                        <p>Chikmagalur - 577101<br>Karnataka, India</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p>support@autopartspro.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Phone</h4>
+                        <p>8147536736</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <span class="text-accent">Auto</span>Parts<span class="logo-pro">Pro</span>
+                </a>
+                <p>Engineered for the enthusiast. Drive the difference.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <a href="#parts">Products</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Support</a>
+            </div>
+            <div class="footer-legal">
+                <h4>Legal</h4>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AutoParts Pro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- App JS -->
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
